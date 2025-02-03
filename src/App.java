@@ -1,3 +1,4 @@
+import controllers.Ejercicios;
 import controllers.EmpleadoContoller;
 import controllers.Mapa;
 import models.Empleado;
@@ -9,7 +10,7 @@ public class App {
         //runMapExamlpe();
 
         // Ejecuta el ejemplo de gestión de empleados usando HashMap
-        runEmpleadoExample();
+        //runEmpleadoExample();
 
         // Ejecuta los ejercicios de sumatoria y anagramas
         runEjerccios();
@@ -40,7 +41,18 @@ public class App {
     }
 
     private static void runEjerccios() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        Ejercicios ejer = new Ejercicios();
 
+        System.out.println("----- Sumatoria de Dos -----");
+        int[] resultado1 = ejer.sumatoriaDeDos(new int[]{9, 2, 3, 6}, 5);
+        System.out.println(resultado1 != null ? "[" + resultado1[0] + ", " + resultado1[1] + "]" : "null");
+
+        int[] resultado2 = ejer.sumatoriaDeDos(new int[]{9, 2, 3, 6}, 10);
+        System.out.println(resultado2 != null ? "[" + resultado2[0] + ", " + resultado2[1] + "]" : "null");
+        
+        System.out.println("----- Anagramas -----");
+        System.out.println(Ejercicios.areAnagrams("listen", "silent"));
+        System.out.println(Ejercicios.areAnagrams("hello", "bello"));
+        System.out.println(Ejercicios.areAnagrams("triangle", "integral"));
     }
 }
